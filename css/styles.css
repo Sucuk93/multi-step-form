@@ -419,6 +419,19 @@ video {
   display: none;
 }
 
+:root {
+  --color-primary-marine: hsl(213, 96%, 18%);
+  --color-primary-purplish: hsl(243, 100%, 62%);
+  --color-primary-pastel: hsl(228, 100%, 84%);
+  --color-primary-light: hsl(206, 94%, 87%);
+  --color-secondary-strawberry: hsl(354, 84%, 57%);
+  --color-grey-cool: hsl(231, 11%, 63%);
+  --color-grey-light: hsl(229, 24%, 87%);
+  --color-white-magnolia: hsl(217, 100%, 97%);
+  --color-white-alabaster: hsl(231, 100%, 99%);
+  --color-white-pure: hsl(0, 0%, 100%);
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -511,4 +524,12 @@ video {
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }

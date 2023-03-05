@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-marine: hsl(213, 96%, 18%);
+    --color-primary-purplish: hsl(243, 100%, 62%);
+    --color-primary-pastel: hsl(228, 100%, 84%);
+    --color-primary-light: hsl(206, 94%, 87%);
+    --color-secondary-strawberry: hsl(354, 84%, 57%);
+
+    --color-grey-cool: hsl(231, 11%, 63%);
+    --color-grey-light: hsl(229, 24%, 87%);
+    --color-white-magnolia: hsl(217, 100%, 97%);
+    --color-white-alabaster: hsl(231, 100%, 99%);
+    --color-white-pure: hsl(0, 0%, 100%);
+  }
+}
