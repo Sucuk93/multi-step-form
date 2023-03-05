@@ -4,7 +4,7 @@
 
 ## Welcome! 👋
 
-## This is a new Change and a Test
+This is a new Change and a Test
 
 Thanks for checking out this front-end coding challenge.
 
