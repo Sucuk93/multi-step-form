@@ -432,6 +432,275 @@ video {
   --color-white-pure: hsl(0, 0%, 100%);
 }
 
+/* ubuntu-300 - latin */
+
+@font-face {
+  font-display: swap;
+
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+
+  font-family: "Ubuntu";
+
+  font-style: normal;
+
+  font-weight: 300;
+
+  src: url("../fonts/ubuntu-v20-latin-300.eot");
+
+  /* IE9 Compat Modes */
+
+  src: url("../fonts/ubuntu-v20-latin-300.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-300.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-300.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-300.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-300.svg#Ubuntu")
+        format("svg");
+
+  /* Legacy iOS */
+}
+
+/* ubuntu-regular - latin */
+
+@font-face {
+  font-display: swap;
+
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+
+  font-family: "Ubuntu";
+
+  font-style: normal;
+
+  font-weight: 400;
+
+  src: url("../fonts/ubuntu-v20-latin-regular.eot");
+
+  /* IE9 Compat Modes */
+
+  src: url("../fonts/ubuntu-v20-latin-regular.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-regular.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-regular.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-regular.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url("../fonts/ubuntu-v20-latin-regular.svg#Ubuntu") format("svg");
+
+  /* Legacy iOS */
+}
+
+/* ubuntu-500 - latin */
+
+@font-face {
+  font-display: swap;
+
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+
+  font-family: "Ubuntu";
+
+  font-style: normal;
+
+  font-weight: 500;
+
+  src: url("../fonts/ubuntu-v20-latin-500.eot");
+
+  /* IE9 Compat Modes */
+
+  src: url("../fonts/ubuntu-v20-latin-500.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-500.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-500.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-500.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-500.svg#Ubuntu")
+        format("svg");
+
+  /* Legacy iOS */
+}
+
+/* ubuntu-700 - latin */
+
+@font-face {
+  font-display: swap;
+
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+
+  font-family: "Ubuntu";
+
+  font-style: normal;
+
+  font-weight: 700;
+
+  src: url("../fonts/ubuntu-v20-latin-700.eot");
+
+  /* IE9 Compat Modes */
+
+  src: url("../fonts/ubuntu-v20-latin-700.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-700.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-700.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-700.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-700.svg#Ubuntu")
+        format("svg");
+
+  /* Legacy iOS */
+}
+
+/* ------------------- */
+
+/* Reset               */
+
+/* ------------------- */
+
+/* Box sizing */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+  *::after,
+  *::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  /* font-size: 62.5%; */
+}
+
+/* set up the body */
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: var(--color-primary-light);
+}
+
+.wrapper {
+  background-color: var(--color-white-pure);
+  border-radius: 0.75rem;
+}
+
+.sidebar {
+  background-image: url(../assets/images/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-position: center; */
+  color: var(--color-white-pure);
+}
+
+.sidebar__info {
+  color: var(--color-grey-light);
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: Uppercase;
+}
+
+.sidebar__text {
+  text-transform: Uppercase;
+  font-weight: 600;
+}
+
+.btn--circle {
+  position: relative;
+  border: 1px solid var(--color-white-pure);
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.btn--circle:hover,
+  .btn--circle:active {
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
+  color: black;
+  cursor: pointer;
+}
+
+.btn__number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main__info {
+  color: var(--color-grey-cool);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Zum verändern der Größe müssen alle Werte um die gleiche Anzahl der Pixel verringert werden: width height beim switch und ebenso beim slider:before */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-primary-marine);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+/* input:checked + .slider {
+    background-color: var(--color-primary-marine);
+  } */
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 38px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -526,10 +795,525 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.hidden {
+  display: none;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.min-h-\[35rem\] {
+  min-height: 35rem;
+}
+
+.w-\[55\%\] {
+  width: 55%;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.min-w-\[18rem\] {
+  min-width: 18rem;
+}
+
+.min-w-\[900px\] {
+  min-width: 900px;
+}
+
+.translate-x-\[-50\%\] {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-\[min-content\] {
+  grid-template-columns: min-content;
+}
+
+.grid-cols-\[repeat\(min-content\)\] {
+  grid-template-columns: repeat(min-content);
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.place-items-end {
+  place-items: end;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.border-\[1px\] {
+  border-width: 1px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+}
+
+.border-t-\[1px\] {
+  border-top-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-grey-light {
+  border-color: var(--color-grey-light);
+}
+
+.border-grey-cool {
+  border-color: var(--color-grey-cool);
+}
+
+.bg-primary-marine {
+  background-color: var(--color-primary-marine);
+}
+
+.bg-white-magnolia {
+  background-color: var(--color-white-magnolia);
+}
+
+.bg-primary-purplish {
+  background-color: var(--color-primary-purplish);
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.text-grey-cool {
+  color: var(--color-grey-cool);
+}
+
+.text-primary-marine {
+  color: var(--color-primary-marine);
+}
+
+.text-white-pure {
+  color: var(--color-white-pure);
+}
+
+.text-primary-purplish {
+  color: var(--color-primary-purplish);
+}
+
+.text-grey-light {
+  color: var(--color-grey-light);
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.accent-primary-purplish {
+  accent-color: var(--color-primary-purplish);
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.outline-1 {
+  outline-width: 1px;
+}
+
+.outline-primary-purplish {
+  outline-color: var(--color-primary-purplish);
+}
+
+.outline-grey-light {
+  outline-color: var(--color-grey-light);
+}
+
+.checked\:border-primary-purplish:checked {
+  border-color: var(--color-primary-purplish);
+}
+
+.checked\:bg-white-magnolia:checked {
+  background-color: var(--color-white-magnolia);
+}
+
+.checked\:bg-primary-purplish:checked {
+  background-color: var(--color-primary-purplish);
+}
+
+.hover\:border-primary-purplish:hover {
+  border-color: var(--color-primary-purplish);
+}
+
+.hover\:bg-primary-purplish:hover {
+  background-color: var(--color-primary-purplish);
+}
+
+.hover\:bg-primary-pastel:hover {
+  background-color: var(--color-primary-pastel);
+}
+
+.hover\:text-primary-marine:hover {
+  color: var(--color-primary-marine);
+}
+
+.hover\:text-primary-purplish:hover {
+  color: var(--color-primary-purplish);
+}
+
+.focus\:bg-primary-purplish:focus {
+  background-color: var(--color-primary-purplish);
+}
+
+.focus\:bg-white-magnolia:focus {
+  background-color: var(--color-white-magnolia);
+}
+
+.active\:border-primary-purplish:active {
+  border-color: var(--color-primary-purplish);
+}
+
+.active\:bg-white-magnolia:active {
+  background-color: var(--color-white-magnolia);
+}
+
+.active\:text-primary-purplish:active {
+  color: var(--color-primary-purplish);
+}
+
+.active\:accent-primary-purplish:active {
+  accent-color: var(--color-primary-purplish);
+}
+
+.active\:outline-1:active {
+  outline-width: 1px;
+}
+
+.active\:hover\:text-primary-purplish:hover:active {
+  color: var(--color-primary-purplish);
 }

@@ -16,4 +16,213 @@
     --color-white-alabaster: hsl(231, 100%, 99%);
     --color-white-pure: hsl(0, 0%, 100%);
   }
+
+  /* ubuntu-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/ubuntu-v20-latin-300.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/ubuntu-v20-latin-300.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-300.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-300.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-300.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-300.svg#Ubuntu")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ubuntu-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/ubuntu-v20-latin-regular.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/ubuntu-v20-latin-regular.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-regular.woff2")
+        format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-regular.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-regular.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */
+        url("../fonts/ubuntu-v20-latin-regular.svg#Ubuntu") format("svg"); /* Legacy iOS */
+  }
+  /* ubuntu-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/ubuntu-v20-latin-500.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/ubuntu-v20-latin-500.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-500.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-500.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-500.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-500.svg#Ubuntu")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ubuntu-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/ubuntu-v20-latin-700.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/ubuntu-v20-latin-700.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../fonts/ubuntu-v20-latin-700.woff2") format("woff2"),
+      /* Super Modern Browsers */ url("../fonts/ubuntu-v20-latin-700.woff")
+        format("woff"),
+      /* Modern Browsers */ url("../fonts/ubuntu-v20-latin-700.ttf")
+        format("truetype"),
+      /* Safari, Android, iOS */ url("../fonts/ubuntu-v20-latin-700.svg#Ubuntu")
+        format("svg"); /* Legacy iOS */
+  }
+  /* ------------------- */
+  /* Reset               */
+  /* ------------------- */
+
+  /* Box sizing */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+  }
+
+  /* set up the body */
+  body {
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background-color: var(--color-primary-light);
+  }
+
+  .wrapper {
+    background-color: var(--color-white-pure);
+    border-radius: 0.75rem;
+  }
+  .sidebar {
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-position: center; */
+    color: var(--color-white-pure);
+  }
+  .sidebar__info {
+    color: var(--color-grey-light);
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-transform: Uppercase;
+  }
+
+  .sidebar__text {
+    text-transform: Uppercase;
+    font-weight: 600;
+  }
+  .btn--circle {
+    position: relative;
+    border: 1px solid var(--color-white-pure);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .btn--circle:hover,
+  .btn--circle:active {
+    border-color: var(--color-primary-light);
+    background-color: var(--color-primary-light);
+    color: black;
+    cursor: pointer;
+  }
+
+  .btn__number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .main__info {
+    color: var(--color-grey-cool);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  /* Slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  /* Zum verändern der Größe müssen alle Werte um die gleiche Anzahl der Pixel verringert werden: width height beim switch und ebenso beim slider:before */
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary-marine);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* input:checked + .slider {
+    background-color: var(--color-primary-marine);
+  } */
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 38px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 }
