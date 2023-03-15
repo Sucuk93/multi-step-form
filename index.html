@@ -13,6 +13,7 @@
     />
 
     <title>Frontend Mentor | Multi-step form</title>
+    <script defer src="js/script.js"></script>
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -22,19 +23,16 @@
       class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
     >
       <!-- Margin-top auto funktioniert leider nicht???? Deswegen absolut positioniert -->
-      <div class="wrapper flex min-w-[900px] p-4">
+      <div class="wrapper flex justify-between min-w-[900px] p-4">
         <div class="sidebar min-h-[35rem] min-w-[18rem]">
           <div
             class="sidebar__content flex flex-col justify-center items-start gap-6 p-6"
           >
-            <div
-              class="sidebar__step flex justify-center items-center"
-              data-step="1"
-            >
+            <div class="sidebar__step flex justify-center items-center">
               <div
                 class="sidebar__wrapper flex justify-center items-center gap-2"
               >
-                <button class="btn--circle">
+                <button class="btn--circle btn--circle-active" data-step="1">
                   <span class="btn__number">1</span>
                 </button>
                 <div class="sidebar__textbox">
@@ -43,14 +41,11 @@
                 </div>
               </div>
             </div>
-            <div
-              class="sidebar__step flex justify-center items-center"
-              data-step="2"
-            >
+            <div class="sidebar__step flex justify-center items-center">
               <div
                 class="sidebar__wrapper flex justify-center items-center gap-2"
               >
-                <button class="btn--circle">
+                <button class="btn--circle" data-step="2">
                   <span class="btn__number">2</span>
                 </button>
                 <div class="sidebar__textbox">
@@ -59,14 +54,11 @@
                 </div>
               </div>
             </div>
-            <div
-              class="sidebar__step flex justify-center items-center"
-              data-step="3"
-            >
+            <div class="sidebar__step flex justify-center items-center">
               <div
                 class="sidebar__wrapper flex justify-center items-center gap-2"
               >
-                <button class="btn--circle">
+                <button class="btn--circle" data-step="3">
                   <span class="btn__number">3</span>
                 </button>
                 <div class="sidebar__textbox">
@@ -75,14 +67,11 @@
                 </div>
               </div>
             </div>
-            <div
-              class="sidebar__step flex justify-center items-center"
-              data-step="4"
-            >
+            <div class="sidebar__step flex justify-center items-center">
               <div
                 class="sidebar__wrapper flex justify-center items-center gap-2"
               >
-                <button class="btn--circle">
+                <button class="btn--circle" data-step="4">
                   <span class="btn__number">4</span>
                 </button>
                 <div class="sidebar__textbox">
@@ -93,9 +82,9 @@
             </div>
           </div>
         </div>
-        <div class="main ml-auto w-[55%] pr-12">
+        <div class="main justify-self-stretch min-w-[15rem] pr-12">
           <div
-            class="main__slide flex justify-center flex-col gap-3 pt-12 pb-6 h-full hidden"
+            class="main__slide flex justify-center flex-col gap-3 pt-12 pb-6 h-full"
             data-slide="1"
           >
             <div class="">
@@ -106,38 +95,53 @@
                 Please provide your name, email address, and phone number.
               </p>
             </div>
-            <form class="flex flex-col gap-6 my-3" action="">
+            <form class="flex flex-col gap-2 my-3" action="" id="form-1">
               <div class="form__group flex flex-col gap-1">
-                <label class="text-primary-marine font-300" for="">Name</label>
+                <label class="text-primary-marine font-300" for="name"
+                  >Name</label
+                >
                 <input
                   class="border-[1px] rounded-lg p-2 outline-1 active:outline-1 outline-primary-purplish cursor-pointer"
                   type="text"
                   placeholder="e.g. Stephen King"
+                  id="name"
+                  name="name"
                 />
+                <p class="required">This field is required!</p>
               </div>
               <div class="form__group flex flex-col gap-1">
-                <label class="text-primary-marine font-300" for="">
+                <label class="text-primary-marine font-300" for="email">
                   Email Address</label
                 >
                 <input
                   class="border-[1px] rounded-lg p-2 outline-1 active:outline-1 outline-primary-purplish cursor-pointer"
                   type="email"
                   placeholder="e.g. stephenking@lorem.com"
+                  id="email"
+                  name="email"
+                  required
                 />
+                <p class="required">This field is required!</p>
               </div>
               <div class="form__group flex flex-col gap-1">
-                <label class="text-primary-marine font-300" for="">
+                <label class="text-primary-marine font-300" for="phone">
                   Phone Number</label
                 >
                 <input
                   class="border-[1px] rounded-lg p-2 outline-1 active:outline-1 outline-primary-purplish cursor-pointer"
                   type="tel"
                   placeholder="e.g. +1 234 567 890"
+                  id="phone"
+                  name="phone"
                 />
+                <p class="required">This field is required!</p>
               </div>
             </form>
+            <!-- type="submit"
+              form="form-1" -->
             <button
-              class="ml-auto mt-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+              class="btn--nextStep ml-auto mt-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+              data-btnSlide="1"
             >
               Next Step
             </button>
@@ -155,81 +159,150 @@
                 You have the option of monthly or yearly billing.
               </p>
             </div>
-            <form class="grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-3 gap-6">
+              <!-- <button class="text-white">
+                <input class="hidden" type="radio" id="Login21" name="row1" />
+                <label class="bg-indigo-400 px-5 py-2.5" for="Login21">Login21</label>
+              </button>
+              <button class="text-white">
+                <input class="hidden" type="radio" id="Login22" name="row1" />
+                <label class="bg-indigo-400 px-5 py-2.5" for="Login22">Login22</label>
+              </button>
+              <button class="text-white">
+                <input class="hidden" type="radio" id="Login23" name="row1" />
+                <label class="bg-indigo-400 px-5 py-2.5" for="Login23">Login23</label>
+              </button> -->
               <button
-                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish active:bg-white-magnolia flex flex-col items-start gap-8 py-4 pl-4"
+                id="btnArcade"
+                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
+                <input
+                  type="radio"
+                  id="arcade"
+                  name="subscriptionType"
+                  class="hidden"
+                  checked="checked"
+                />
+                <label
+                  for="arcade"
+                  class="rounded-lg flex flex-col items-start gap-8 py-4 pl-4"
                 >
-                  <g fill="none" fill-rule="evenodd">
-                    <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
-                    <path
-                      fill="#FFF"
-                      fill-rule="nonzero"
-                      d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z"
-                    />
-                  </g>
-                </svg>
-                <div class="flex flex-col items-start">
-                  <h4 class="text-l font-medium text-primary-marine mb-1">
-                    Arcade
-                  </h4>
-                  <p class="main__info text-sm">$9/mo</p>
-                </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
+                      <path
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                        d="M24.995 18.005h-3.998v5.998h-2v-5.998H15a1 1 0 0 0-1 1V29a1 1 0 0 0 1 1h9.995a1 1 0 0 0 1-1v-9.995a1 1 0 0 0-1-1Zm-5.997 8.996h-2v-1.999h2v2Zm2-11.175a2.999 2.999 0 1 0-2 0v2.18h2v-2.18Z"
+                      />
+                    </g>
+                  </svg>
+                  <div class="flex flex-col items-start">
+                    <h4
+                      class="plan-name text-l font-medium text-primary-marine mb-1"
+                    >
+                      Arcade
+                    </h4>
+                    <p
+                      id="pricetag-1"
+                      class="price-tag--plan main__info text-sm"
+                    >
+                      $9/mo
+                    </p>
+                  </div>
+                </label>
               </button>
               <button
-                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish active:bg-white-magnolia flex flex-col items-start gap-8 py-4 pl-4"
+                id="btnAdvanced"
+                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
+                <input
+                  type="radio"
+                  id="advanced"
+                  name="subscriptionType"
+                  class="hidden"
+                />
+                <label
+                  for="advanced"
+                  class="rounded-lg flex flex-col items-start gap-8 py-4 pl-4"
                 >
-                  <g fill="none" fill-rule="evenodd">
-                    <circle cx="20" cy="20" r="20" fill="#F9818E" />
-                    <path
-                      fill="#FFF"
-                      fill-rule="nonzero"
-                      d="M25.057 15H14.944C12.212 15 10 17.03 10 19.885c0 2.857 2.212 4.936 4.944 4.936h10.113c2.733 0 4.943-2.08 4.943-4.936S27.79 15 25.057 15ZM17.5 20.388c0 .12-.108.237-.234.237h-1.552v1.569c0 .126-.138.217-.259.217H14.5c-.118 0-.213-.086-.213-.203v-1.583h-1.569c-.126 0-.217-.139-.217-.26v-.956c0-.117.086-.213.202-.213h1.584v-1.554c0-.125.082-.231.203-.231h.989c.12 0 .236.108.236.234v1.551h1.555c.125 0 .231.083.231.204v.988Zm5.347.393a.862.862 0 0 1-.869-.855c0-.472.39-.856.869-.856.481 0 .87.384.87.856 0 .471-.389.855-.87.855Zm1.9 1.866a.86.86 0 0 1-.87-.852.86.86 0 0 1 .87-.855c.48 0 .87.38.87.855a.86.86 0 0 1-.87.852Zm0-3.736a.862.862 0 0 1-.87-.854c0-.472.39-.856.87-.856s.87.384.87.856a.862.862 0 0 1-.87.854Zm1.899 1.87a.862.862 0 0 1-.868-.855c0-.472.389-.856.868-.856s.868.384.868.856a.862.862 0 0 1-.868.855Z"
-                    />
-                  </g>
-                </svg>
-                <div class="flex flex-col items-start">
-                  <h4 class="text-l font-medium text-primary-marine mb-1">
-                    Advanced
-                  </h4>
-                  <p class="main__info text-sm">$9/mo</p>
-                </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <circle cx="20" cy="20" r="20" fill="#F9818E" />
+                      <path
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                        d="M25.057 15H14.944C12.212 15 10 17.03 10 19.885c0 2.857 2.212 4.936 4.944 4.936h10.113c2.733 0 4.943-2.08 4.943-4.936S27.79 15 25.057 15ZM17.5 20.388c0 .12-.108.237-.234.237h-1.552v1.569c0 .126-.138.217-.259.217H14.5c-.118 0-.213-.086-.213-.203v-1.583h-1.569c-.126 0-.217-.139-.217-.26v-.956c0-.117.086-.213.202-.213h1.584v-1.554c0-.125.082-.231.203-.231h.989c.12 0 .236.108.236.234v1.551h1.555c.125 0 .231.083.231.204v.988Zm5.347.393a.862.862 0 0 1-.869-.855c0-.472.39-.856.869-.856.481 0 .87.384.87.856 0 .471-.389.855-.87.855Zm1.9 1.866a.86.86 0 0 1-.87-.852.86.86 0 0 1 .87-.855c.48 0 .87.38.87.855a.86.86 0 0 1-.87.852Zm0-3.736a.862.862 0 0 1-.87-.854c0-.472.39-.856.87-.856s.87.384.87.856a.862.862 0 0 1-.87.854Zm1.899 1.87a.862.862 0 0 1-.868-.855c0-.472.389-.856.868-.856s.868.384.868.856a.862.862 0 0 1-.868.855Z"
+                      />
+                    </g>
+                  </svg>
+                  <div class="flex flex-col items-start">
+                    <h4
+                      class="plan-name text-l font-medium text-primary-marine mb-1"
+                    >
+                      Advanced
+                    </h4>
+                    <p
+                      id="pricetag-2"
+                      class="price-tag--plan main__info text-sm"
+                    >
+                      $12/mo
+                    </p>
+                  </div>
+                </label>
               </button>
               <button
-                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish active:bg-white-magnolia flex flex-col items-start gap-8 py-4 pl-4"
+                class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
+                <input
+                  type="radio"
+                  id="pro"
+                  name="subscriptionType"
+                  class="hidden"
+                />
+                <label
+                  for="pro"
+                  class="rounded-lg flex flex-col items-start gap-8 py-4 pl-4"
                 >
-                  <g fill="none" fill-rule="evenodd">
-                    <circle cx="20" cy="20" r="20" fill="#483EFF" />
-                    <path
-                      fill="#FFF"
-                      fill-rule="nonzero"
-                      d="M26.666 13H13.334A3.333 3.333 0 0 0 10 16.333v7.193a3.447 3.447 0 0 0 2.14 3.24c1.238.5 2.656.182 3.56-.8L18.52 23h2.96l2.82 2.966a3.2 3.2 0 0 0 3.56.8 3.447 3.447 0 0 0 2.14-3.24v-7.193A3.333 3.333 0 0 0 26.666 13Zm-9.333 6H16v1.333a.667.667 0 0 1-1.333 0V19h-1.333a.667.667 0 0 1 0-1.334h1.333v-1.333a.667.667 0 1 1 1.333 0v1.333h1.333a.667.667 0 1 1 0 1.334Zm7.333 2a2.667 2.667 0 1 1 0-5.333 2.667 2.667 0 0 1 0 5.333ZM26 18.333a1.333 1.333 0 1 1-2.667 0 1.333 1.333 0 0 1 2.667 0Z"
-                    />
-                  </g>
-                </svg>
-                <div class="flex flex-col items-start">
-                  <h4 class="text-l font-medium text-primary-marine mb-1">
-                    Pro
-                  </h4>
-                  <p class="main__info text-sm">$9/mo</p>
-                </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <circle cx="20" cy="20" r="20" fill="#483EFF" />
+                      <path
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                        d="M26.666 13H13.334A3.333 3.333 0 0 0 10 16.333v7.193a3.447 3.447 0 0 0 2.14 3.24c1.238.5 2.656.182 3.56-.8L18.52 23h2.96l2.82 2.966a3.2 3.2 0 0 0 3.56.8 3.447 3.447 0 0 0 2.14-3.24v-7.193A3.333 3.333 0 0 0 26.666 13Zm-9.333 6H16v1.333a.667.667 0 0 1-1.333 0V19h-1.333a.667.667 0 0 1 0-1.334h1.333v-1.333a.667.667 0 1 1 1.333 0v1.333h1.333a.667.667 0 1 1 0 1.334Zm7.333 2a2.667 2.667 0 1 1 0-5.333 2.667 2.667 0 0 1 0 5.333ZM26 18.333a1.333 1.333 0 1 1-2.667 0 1.333 1.333 0 0 1 2.667 0Z"
+                      />
+                    </g>
+                  </svg>
+                  <div class="flex flex-col items-start">
+                    <h4
+                      class="plan-name text-l font-medium text-primary-marine mb-1"
+                    >
+                      Pro
+                    </h4>
+                    <p
+                      id="pricetag-3"
+                      class="price-tag--plan main__info text-sm"
+                    >
+                      $15/mo
+                    </p>
+                  </div>
+                </label>
               </button>
               <div
                 class="col-span-full h-12 rounded-lg bg-white-magnolia flex justify-center items-center"
@@ -237,19 +310,26 @@
                 <div class="flex items-center gap-6">
                   <span>Monthly</span>
                   <label class="switch">
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      id="btnToggle"
+                      onclick="switchSubscription()"
+                    />
                     <span class="slider round"></span>
                   </label>
                   <span class="text-grey-cool">Yearly</span>
                 </div>
               </div>
-            </form>
+            </div>
             <div class="flex justify-between items-center mt-auto">
-              <button class="main__info font-normal hover:text-primary-marine">
+              <button
+                class="btn--prevStep main__info font-normal hover:text-primary-marine"
+              >
                 Go Back
               </button>
               <button
-                class="ml-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+                class="btn--nextStep ml-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+                data-btnSlide="2"
               >
                 Next Step
               </button>
@@ -275,6 +355,8 @@
                 <input
                   type="checkbox"
                   class="w-4 h-4 accent-primary-purplish"
+                  name="addonCheckbox"
+                  value="1"
                 />
                 <div>
                   <h3 class="text-l font-bold mb-2 text-primary-marine">
@@ -282,7 +364,9 @@
                   </h3>
                   <p class="main__info">Access to multiplayer games</p>
                 </div>
-                <span class="text-primary-purplish ml-auto">+$1/mo</span>
+                <span class="text-primary-purplish ml-auto price-tag--addon"
+                  >+$1/mo</span
+                >
               </label>
               <label
                 class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish active:bg-white-magnolia flex gap-8 items-center px-6 py-4"
@@ -290,6 +374,8 @@
                 <input
                   type="checkbox"
                   class="w-4 h-4 accent-primary-purplish"
+                  name="addonCheckbox"
+                  value="2"
                 />
                 <div>
                   <h3 class="text-l font-bold mb-2 text-primary-marine">
@@ -297,7 +383,9 @@
                   </h3>
                   <p class="main__info">Extra 1TB of cloud save</p>
                 </div>
-                <span class="text-primary-purplish ml-auto">+$2/mo</span>
+                <span class="text-primary-purplish ml-auto price-tag--addon"
+                  >+$2/mo</span
+                >
               </label>
               <label
                 class="rounded-lg border-solid border-[1px] border-grey-light hover:border-primary-purplish active:border-primary-purplish active:bg-white-magnolia flex gap-8 items-center px-6 py-4"
@@ -305,6 +393,8 @@
                 <input
                   type="checkbox"
                   class="w-4 h-4 accent-primary-purplish"
+                  name="addonCheckbox"
+                  value="2"
                 />
                 <div>
                   <h3 class="text-l font-bold mb-2 text-primary-marine">
@@ -312,16 +402,21 @@
                   </h3>
                   <p class="main__info">Custom theme on your profile</p>
                 </div>
-                <span class="text-primary-purplish ml-auto">+$2/mo</span>
+                <span class="text-primary-purplish ml-auto price-tag--addon"
+                  >+$2/mo</span
+                >
               </label>
             </form>
 
             <div class="flex justify-between items-center mt-auto">
-              <button class="main__info font-normal hover:text-primary-marine">
+              <button
+                class="btn--prevStep main__info font-normal hover:text-primary-marine"
+              >
                 Go Back
               </button>
               <button
-                class="ml-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+                class="btn--nextStep ml-auto bg-primary-marine hover:bg-primary-purplish text-white-pure py-3 px-6 rounded-lg"
+                data-btnSlide="3"
               >
                 Next Step
               </button>
@@ -343,48 +438,52 @@
               <div class="bg-white-magnolia rounded-lg">
                 <div class="p-6 flex flex-col gap-4">
                   <div class="flex flex-col">
-                    <h4 class="text-l">Acarde (Monthly)</h4>
+                    <h4 id="summary--Plan" class="text-l">Acarde (Monthly)</h4>
                     <div class="flex justify-between items-center">
                       <a
                         href="#"
+                        id="changePlan"
                         class="text-grey-cool active:text-primary-purplish hover:text-primary-purplish underline text-sm"
                         >Change</a
                       >
-                      <span class="font-semibold tracking-wide">$9/mo</span>
+                      <span
+                        id="summary--Plan-Price"
+                        class="font-semibold tracking-wide"
+                        >$9/mo</span
+                      >
                     </div>
                   </div>
-                  <div class="border-t-[1px] border-grey-light"></div>
-                  <div class="flex justify-between items-center">
-                    <p class="text-grey-cool text-sm">Online service</p>
-                    <span class="text-sm tracking-wide">+$1/mo</span>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <p class="text-grey-cool text-sm">Larger storage</p>
-                    <span class="text-sm tracking-wide">+$2/mo</span>
-                  </div>
+
+                  <div id="addonHtml" class="flex flex-col gap-4"></div>
                 </div>
               </div>
-              <div class="flex justify-between items-center px-6">
+              <div
+                id="summary--final"
+                class="flex justify-between items-center px-6"
+              >
                 <p class="text-grey-cool text-sm">Total (per month)</p>
                 <span
                   class="text-xl font-bold text-primary-purplish tracking-wide"
-                  >+$12/mo</span
+                  >+$9/mo</span
                 >
               </div>
             </div>
             <div class="flex justify-between items-center mt-auto">
-              <button class="main__info font-normal hover:text-primary-marine">
+              <button
+                class="btn--prevStep main__info font-normal hover:text-primary-marine"
+              >
                 Go Back
               </button>
               <button
-                class="ml-auto bg-primary-purplish hover:bg-primary-pastel text-white-pure py-3 px-6 rounded-lg"
+                class="btn--nextStep ml-auto bg-primary-purplish hover:bg-primary-pastel text-white-pure py-3 px-6 rounded-lg"
+                data-btnSlide="4"
               >
                 Confirm
               </button>
             </div>
           </div>
           <div
-            class="main__slide flex flex-col justify-center items-center h-full"
+            class="main__slide flex flex-col justify-center items-center h-full hidden"
             data-slide="5"
           >
             <div class="flex flex-col justify-center items-center gap-8">
